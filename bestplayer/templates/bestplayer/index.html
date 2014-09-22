@@ -1,0 +1,11 @@
+
+<h1>here we got template for index of bestplayer</h1>
+{% if top_five %}
+    <ul>
+    {% for club in top_five %}
+        <a href="{% url 'bestplayer:detail' club.id %}"><li>{{club.name}}</li></a>
+    {% endfor %}
+    </ul>
+{% else %}
+    <strong><h3>Error ocured no clubs yet</h3></strong>
+{% endif %}
