@@ -1,0 +1,13 @@
+<h3>{{club.name}}</h3>
+<h2>Vote for the best player</h2>
+
+<form action="{% url 'bestplayer:vote' club.id %}" method = 'POST'>
+    {% csrf_token %}
+    <ul>
+        {% for klub in club.footballer_set.all%}
+            <input type = "radio" name = "klub" id = "klub{{ forloop.counter }}" value ="{{klub.id}}"/>
+            <label for = "klub{{forloop.counter}}">{{klub.name}}</label><br/>
+        {% endfor %}
+    </ul>
+    <input type='submit' value="Submit it baby"/>
+</form>
