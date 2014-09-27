@@ -1,0 +1,8 @@
+<h1>Here is the result template</h1>
+<h3>{{club.name}}</h3>
+<ul>
+    {% for player in club.footballer_set.all %}
+        <li> {{player.name}} : {{player.number}} votes</li>
+    {% endfor %}
+</ul>
+<a href={%url 'bestplayer:detail' club.id %}>wanna vote again???</a>

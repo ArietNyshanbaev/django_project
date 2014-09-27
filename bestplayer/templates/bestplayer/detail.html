@@ -1,6 +1,8 @@
 <h3>{{club.name}}</h3>
 <h2>Vote for the best player</h2>
-
+{% if error_message %}
+<p><strong>{{error_message}}</strong></p>
+{% endif %}
 <form action="{% url 'bestplayer:vote' club.id %}" method = 'POST'>
     {% csrf_token %}
     <ul>
