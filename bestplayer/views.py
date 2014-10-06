@@ -1,6 +1,6 @@
 from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse,HttpResponseRedirect
-from bestplayer.models import Club,Footballer
+from .models import Club,Footballer
 from django.core.urlresolvers import reverse
 from django.views import generic
 
