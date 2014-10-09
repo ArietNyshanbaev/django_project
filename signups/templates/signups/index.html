@@ -1,16 +1,13 @@
-<!Doctype html>
-<html>
-    <head>
-        <title>This is the index of signups</title>
-    </head>
-    <body>
-        <div class='main'>
-            <h1>Signup here Bitch!!!</h1>
-            <form action="" method='POST'>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="cover-heading">Signup now.</h1>
+            <form action="" method='POST' style="color: black;">
                 {% csrf_token %}
                 {{form.as_p}}
-                <input type='submit' value='SignUp'>
+                <input  class="btn btn-lg btn-default" type='submit' value='SignUp'>
             </form>
-        </div>
-    </body>
-</html>
+
+{% endblock %}
+            
